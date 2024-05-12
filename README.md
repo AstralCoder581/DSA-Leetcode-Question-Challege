@@ -14,6 +14,7 @@
 ## To set up git( if not done)
 - Download git from [here](https://git-scm.com/download/win)
 - Then follow the this [process](https://www.youtube.com/watch?v=j-g8AXr4nR4)
+- If you are interested to learn everything about git and github [Click here](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV)
 
 ## What to do in this challenge
 - Make a folder of your name.
@@ -24,4 +25,4 @@
   ......so on
   ```
 - And updoad then answer of the question you solved from leetcode.
-- Minimum of 10 questions per week. 
+- Minimum of 10 questions per week.
