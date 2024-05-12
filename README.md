@@ -15,7 +15,7 @@
 - Download git from [here](https://git-scm.com/download/win)
 - Then follow the this [process](https://www.youtube.com/watch?v=j-g8AXr4nR4)
 
-## What to do
+## What to do in this challenge
 - Make a folder of your name.
 - Then make a folder week wise as
   ```text
