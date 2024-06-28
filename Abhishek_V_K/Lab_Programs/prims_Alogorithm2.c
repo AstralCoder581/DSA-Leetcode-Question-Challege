@@ -1,6 +1,6 @@
     #include <stdio.h>    
     #include <limits.h>    
-    #define vertices 4  /*Define the number of vertices in the graph*/  
+    #define vertices 4
     /* create minimum_key() method for finding the vertex that has minimum key-value and that is not added in MST yet */   
     int minimum_key(int k[], int mst[])    
     {  
