@@ -14,9 +14,8 @@ typedef struct edge_list {
 } edge_list;
 
 edge_list elist;
-
-int Graph[MAX][MAX], n;
 edge_list spanlist;
+int Graph[MAX][MAX], n;
 
 void kruskalAlgo();
 int find(int belongs[], int vertexno);
@@ -52,7 +51,7 @@ void kruskalAlgo() {
 
     if (cno1 != cno2) {
       spanlist.data[spanlist.n] = elist.data[i];
-      spanlist.n = spanlist.n + 1;
+      spanlist.n += 1;
       applyUnion(belongs, cno1, cno2);
     }
   }
@@ -61,11 +60,8 @@ void kruskalAlgo() {
 int find(int belongs[], int vertexno) {
   return (belongs[vertexno]);
 }
-
 void applyUnion(int belongs[], int c1, int c2) {
-  int i;
-
-  for (i = 0; i < n; i++)
+  for (int i = 0; i < n; i++)
     if (belongs[i] == c2)
       belongs[i] = c1;
 }
@@ -74,7 +70,6 @@ void applyUnion(int belongs[], int c1, int c2) {
 void sort() {
   int i, j;
   edge temp;
-
   for (i = 1; i < elist.n; i++)
     for (j = 0; j < elist.n - 1; j++)
       if (elist.data[j].w > elist.data[j + 1].w) {
