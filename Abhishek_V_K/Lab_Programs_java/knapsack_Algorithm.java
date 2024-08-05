@@ -10,7 +10,7 @@ public class knapsack{
         }return K[n][W];
     }
     public static void main(String args[]){ 
-        int weight[] = new int[] {3, 5, 6, 9};
+        int weight[] = new int[] {3, 5, 6, 2};
         int profit[] = new int[] {10, 4, 9, 11};   
         System.out.println(knapSack(7, weight, profit, profit.length)); 
     } 
