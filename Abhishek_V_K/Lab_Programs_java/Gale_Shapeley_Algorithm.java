@@ -3,12 +3,9 @@ import java.util.*;
 public class stablematching {
     static int N = 3; 
     static boolean wPrefersM1OverM(int prefer[][], int w, int m, int m1){ // This function returns true if woman 'w' prefers man 'm1' over man 'm' 
-        // Check if w prefers m over her current engagement m1 
-        for (int i = 0; i < N; i++){ 
-            if (prefer[w][i] == m1) 
-                return true; 
-            if (prefer[w][i] == m) 
-            return false; 
+        for (int i = 0; i < N; i++){ // Check if w prefers m over her current engagement m1 
+            if (prefer[w][i] == m1) return true; 
+            if (prefer[w][i] == m) return false; 
         }
         return false;
     } 
@@ -38,12 +35,8 @@ public class stablematching {
             } 
         }
         System.out.println("Woman Man"); 
-        for (int i = 0; i < N; i++) {
-            System.out.print(" "); 
-            System.out.println((i + N) + "	 " + wPartner[i]);
-        }
+        for (int i = 0; i < N; i++) System.out.println((i + N) + "	 " + wPartner[i]);
     } 
-    // Driver Code
     public static void main(String[] args) { 
         int prefer[][] = new int[][]{{3, 4, 5}, 
                                      {4, 3, 5}, 
