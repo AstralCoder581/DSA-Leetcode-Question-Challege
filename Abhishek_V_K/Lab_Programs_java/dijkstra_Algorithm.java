@@ -36,14 +36,14 @@ public class dijkstraAlgo {
             return this.path - p2.path; //sort by default in increasing order
         }
     }
-    public static void dijkstra(ArrayList<Edge> graph[], int src){
-        int dist[] = new int[graph.length]; //stores distance
-        for (int i=0; i<graph.length; i++){
+    public static void dijkstra(ArrayList<Edge> graph[], int src, int V){
+        int dist[] = new int[V]; //stores distance
+        for (int i=0; i<V; i++){
             if(i != src){
                 dist[i] = Integer.MAX_VALUE; // all the nodes will be set to infinity apart from the source
             }
         }
-        boolean vis[] = new boolean[graph.length]; //visited arrau
+        boolean vis[] = new boolean[V]; //visited arrau
         PriorityQueue<Pair> pq = new PriorityQueue<>();
         pq.add(new Pair(src, 0)); // source to source path is 0
         while (!pq.isEmpty()) { // see if it is visited or not
@@ -69,6 +69,7 @@ public class dijkstraAlgo {
         int V=5;
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
-        dijkstra(graph, 0);
+        dijkstra(graph, 0, V);
     }
 }
+
