@@ -16,8 +16,7 @@ class Job implements Comparable<Job> {
 public class weightedinterval {
     static int latestNonConflict(Job[] jobs, int index) {
         for (int j = index - 1; j >= 0; j--) {
-            if (jobs[j].finish <= jobs[index].start) {
-                return j; }
+            if (jobs[j].finish <= jobs[index].start) return j; 
         }return -1;
     }
 
@@ -35,12 +34,12 @@ public class weightedinterval {
     }
     public static void main(String[] args) {
         Job[] jobs = {
-            new Job(1, 3, 5),
-            new Job(2, 5, 6),
-            new Job(4, 6, 5),
-            new Job(6, 7, 4),
-            new Job(5, 8, 11),
-            new Job(7, 9, 2)
+            new Job(1, 2, 100),
+            new Job(2, 5, 200),
+            new Job(3, 6, 300),
+            new Job(4, 8, 400),
+            new Job(5, 9, 500),
+            new Job(6, 10, 100)
         };
         System.out.println(findMaxProfit(jobs));
     }
