@@ -45,13 +45,13 @@ public class stablematching {
     } 
     // Driver Code
     public static void main(String[] args) { 
-        int prefer[][] = new int[][]{{4, 5, 3}, 
-                                     {3, 5, 4}, 
-                                     {4, 5, 3}, 
+        int prefer[][] = new int[][]{{3, 4, 5}, 
+                                     {4, 3, 5}, 
+                                     {3, 4, 5}, 
                                       
                                      {0, 1, 2}, 
-                                     {0, 1, 2}, 
-                                     {0, 1, 2}, 
+                                     {1, 2, 0}, 
+                                     {2, 0, 1}, 
                                     }; 
         stableMarriage(prefer); 
     }
