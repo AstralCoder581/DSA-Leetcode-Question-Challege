@@ -20,22 +20,19 @@ public class stablematching {
         int freeCount = N; 
         while (freeCount > 0) { // While there are free men  
             int m; 
-            for (m = 0; m < N; m++) 
-                if (mFree[m] == false) 
-                    break; 
+            for (m = 0; m < N; m++) if (mFree[m] == false) break; 
             for (int i = 0; i < N && mFree[m] == false; i++) { 
                 int w = prefer[m][i]; 
                 if (wPartner[w - N] == -1) { 
                     wPartner[w - N] = m; 
-                    mFree[m] = true; 
+                    mFree[m] = true; //m is engaged
                     freeCount--; 
-                }else // If w is not free 
-                { 
+                }else { // If w is not free
                     int m1 = wPartner[w - N]; 
                     if (wPrefersM1OverM(prefer, w, m, m1) == false){ 
                         wPartner[w - N] = m; 
-                        mFree[m] = true; 
-                        mFree[m1] = false; 
+                        mFree[m] = true; // m is engaged
+                        mFree[m1] = false; //m1 is free
                     } 
                 }
             } 
