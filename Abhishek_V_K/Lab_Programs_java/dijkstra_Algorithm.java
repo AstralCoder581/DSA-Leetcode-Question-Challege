@@ -2,22 +2,14 @@ import java.util.*;
 
 public class dijkstraAlgo {
     static class Edge{
-        int src;
-        int dest;
-        int wt;
-
+        int src,dest,wt;
         public Edge(int s, int d, int w){
             this.src = s;
             this.dest = d;
-            this.wt = w;
-        }
+            this.wt = w; }
     }
-
     public static void createGraph(ArrayList<Edge> graph[]){
-        for (int i=0; i<graph.length; i++){
-            graph[i] = new ArrayList<Edge>();
-        }
-
+        for (int i=0; i<graph.length; i++) graph[i] = new ArrayList<Edge>();
         graph[0].add(new Edge(0,1,10));
         graph[0].add(new Edge(0,4,100));
 
@@ -33,23 +25,17 @@ public class dijkstraAlgo {
         graph[4].add(new Edge(4,3,60));
         graph[4].add(new Edge(4,0,100));
     }
-
     static class Pair implements Comparable<Pair>{
-        int n;
-        int path;
-
+        int n,path;
         public Pair(int n, int path){
             this.n = n;
             this.path = path;
         }
-
         @Override
         public int compareTo(Pair p2){
             return this.path - p2.path; //sort by default in increasing order
         }
     }
-
-
     public static void dijkstra(ArrayList<Edge> graph[], int src){
         int dist[] = new int[graph.length]; //stores distance
         for (int i=0; i<graph.length; i++){
@@ -57,7 +43,6 @@ public class dijkstraAlgo {
                 dist[i] = Integer.MAX_VALUE; // all the nodes will be set to infinity apart from the source
             }
         }
-
         boolean vis[] = new boolean[graph.length]; //visited arrau
         PriorityQueue<Pair> pq = new PriorityQueue<>();
         pq.add(new Pair(src, 0)); // source to source path is 0
@@ -70,7 +55,6 @@ public class dijkstraAlgo {
                     int u = e.src; //source
                     int v = e.dest; //destination
                     int wt = e.wt; //weight
-
                     if(dist[u]+wt < dist[v]){ //update distance of src to v
                         dist[v] = dist[u] + wt;
                         pq.add(new Pair(v, dist[v]));
@@ -78,20 +62,13 @@ public class dijkstraAlgo {
                 }
             }           
         }
-
-        for(int i=0; i<dist.length; i++){
-            System.out.print(dist[i]+" ");
-        }
+        for(int i=0; i<dist.length; i++) System.out.print(dist[i]+" ");
         System.out.println();
     }
-
     public static void main(String[] args) {
         int V=5;
-        @SuppressWarnings("unchecked")
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
-        int src = 0;
-        dijkstra(graph, src);
+        dijkstra(graph, 0);
     }
 }
-
