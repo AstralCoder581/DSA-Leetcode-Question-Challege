@@ -5,11 +5,11 @@ public class countinversion {
         ArrayList<Integer> temp = new ArrayList<>();
         int i = si, j = mid + 1, cnt = 0;
         while (i <= mid && j <= ei) {
-            if (arr[i] < arr[j]) {
-                temp.add(arr[i++]);
-            } else {
+            if (arr[i] < arr[j]) temp.add(arr[i++]);
+            else{
                 temp.add(arr[j++]);
-                cnt += (mid - i + 1); }
+                cnt += (mid - i + 1); 
+            }
         }
         while (i <= mid) temp.add(arr[i++]);
         while (j <= ei) temp.add(arr[j++]);
@@ -27,8 +27,8 @@ public class countinversion {
         return cnt;
     }
     public static void main(String[] args) {
-        int[] a = {4, 3, 2, 1, 5, 6, 8, 7};
-        int numberOfInversions = mergeSort(a, 0, a.length - 1);
+        int[] arr = {4, 3, 2, 1, 5, 6, 8, 7};
+        int numberOfInversions = mergeSort(arr, 0, arr.length-1);
         System.out.println("The number of inversions are: " + numberOfInversions);
     }
 }
