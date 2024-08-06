@@ -1,11 +1,4 @@
 public class mergesortProg{
-	public static void printArr(int arr[]){
-		for (int i=0; i < arr.length; i++){
-			System.out.print(arr[i]+" ");
-		}
-		System.out.println();
-	}
-
 	public static void mergesort(int arr[], int si, int ei){
 		if(si >= ei) return;
 		int mid = si + (ei-si)/2;
@@ -13,7 +6,6 @@ public class mergesortProg{
 		mergesort(arr,mid+1,ei);
 		merge(arr,si,mid,ei);	
 	}
-
 	public static void merge(int arr[], int si, int mid, int ei){
 		int temp[] = new int[ei-si+1];
 		int i = si, j = mid+1, k = 0;
@@ -29,6 +21,9 @@ public class mergesortProg{
 	public static void main(String args[]){
 		int arr[] = {5,9,8,6,7,3};
 		mergesort(arr,0,arr.length-1);
-		printArr(arr);
+		for (int i=0; i < arr.length; i++){
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
 	}
 }
